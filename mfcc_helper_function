@@ -1,0 +1,28 @@
+import parselmouth
+import glob
+import os.path
+import librosa
+import numpy as np
+from parselmouth.praat import call
+import pandas as pd
+
+hop_length = 450 # configure based on sample rate, hop length should amount to 20 to 40 ms of speech
+
+array_to_stack = np.ones((22,22))
+array_to_stack = np.stack([array_to_stack], axis = 0) # add third dimension
+
+def get_mfcc(wave_file):  
+    y, sr = librosa.load(wave_file)
+    mfcc = librosa.feature.mfcc(y=y, sr=sr, hop_length = hop_length, n_mfcc = 22)
+    mfcc_subset = mfcc[:,0:22]
+    max_mfcc = np.amax(mfcc_subset)
+    mfcc_subset /= max_mfcc
+    mfcc_subset = np.stack([mfcc_subset], axis = 0)
+    
+    return mfcc_subset
+
+def shuffle_and_process(array_to_stack):
+    array_to_stack = array_to_stack[1:][:][:] # removes first placeholder array
+    array_to_stack = np.random.permutation(array_to_stack)
+    
+    return array_to_stack
