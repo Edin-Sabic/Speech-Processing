@@ -1,6 +1,7 @@
 # This script creates a get_mfcc function which returns the mel-frequency cepstral coefficients (MFCCs), where frequency bands
 # are spaced equally on the mel scale. These coefficients are useful for speech recognition and speech anomaly
-# detection tasks.
+# detection tasks. These MFCCs are saved and continuously stacked on top of each other for later
+# input into a Keras CNN.
 
 import parselmouth
 import glob
