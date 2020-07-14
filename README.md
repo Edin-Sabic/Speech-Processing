@@ -8,7 +8,10 @@
 
 ##### Future directions: 
 
-◊ Adding a ConvNet to analyze spectrogram images of each sound sample. </n>
-◊ Building a multi-input Keras model that includes both tabular data and spectrogram/MFCC data. </n>
-◊ Determining whether the addition of multiple phonemes from the dataset, such as an "i" sound, might be helpful in conjunction with the present data. </n>
-◊ Evaluating whether the phrase including in the data set, "Guten Morgen, wie geht es Ihnen?" (Good morning, how are you?) can be used in a similar way to the individual sounds. </n>
+◊ Adding a ConvNet to analyze spectrogram images of each sound sample. 
+
+◊ Building a multi-input Keras model that includes both tabular data and spectrogram/MFCC data. 
+
+◊ Determining whether the addition of multiple phonemes from the dataset, such as an "i" sound, might be helpful in conjunction with the present data. 
+
+◊ Evaluating whether the phrase including in the data set, "Guten Morgen, wie geht es Ihnen?" (Good morning, how are you?) can be used in a similar way to the individual sounds. 
